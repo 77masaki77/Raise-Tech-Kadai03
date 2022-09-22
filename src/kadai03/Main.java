@@ -18,7 +18,10 @@ public class Main {
             System.out.print(key + "といえば : ");
             String commandLine = new Scanner(System.in).nextLine();
             try {
-                checkBlankMakeError(commandLine);
+                if(commandLine.isBlank()){
+                    //コード量の削減のため、メソッド化を中止
+                    throw new Exception("スペースか、何も入力がありません。未回答とします。");
+                }
             } catch (Exception e) {
                 System.out.println(e);
                 commandLine = "未回答";
@@ -37,9 +40,5 @@ public class Main {
         System.out.println("-------------------------------");
     }
 
-    public static void checkBlankMakeError(String commandLine) throws Exception {
-        if (commandLine.isBlank())  {
-            throw new Exception("スペースか、何も入力がありません。未回答とします。");
-        }
-    }
+
 }
