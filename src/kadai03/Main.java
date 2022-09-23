@@ -18,7 +18,7 @@ public class Main {
             System.out.print(key + "といえば : ");
             String commandLine = new Scanner(System.in).nextLine();
             try {
-                if(commandLine.isBlank()){
+                if (commandLine.isBlank()) {
                     //コード量の削減のため、メソッド化を中止
                     throw new Exception("スペースか、何も入力がありません。未回答とします。");
                 }
@@ -34,9 +34,13 @@ public class Main {
         System.out.println("-------------------------------");
         System.out.println("key 　 : value");
         System.out.println("-------------------------------");
-        for (String key : beerMap.keySet()) {
-            System.out.printf("%-4s : %s%n", key, beerMap.get(key));
-        }
+
+        //Stream APIの予習のため、コード置き換え
+        //for (String key : beerMap.keySet()) {
+        //    System.out.printf("%-4s : %s%n", key, beerMap.get(key));
+        //}
+        beerMap.entrySet().stream().forEach(value -> System.out.println(value.getKey() + " : " + value.getValue()));
+
         System.out.println("-------------------------------");
     }
 
