@@ -35,7 +35,7 @@ public class Main {
         System.out.println("key 　 : value");
         System.out.println("-------------------------------");
 
-        //Stream APIの予習のため、コード置き換え
+        //Stream APIの予習のため、コード置き換え実施
         //for (String key : beerMap.keySet()) {
         //    System.out.printf("%-4s : %s%n", key, beerMap.get(key));
         //}
